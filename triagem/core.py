@@ -83,16 +83,18 @@ def gemini_classifier(model: str | None = None):
     if not os.environ.get("GEMINI_API_KEY"):
         raise SystemExit("Defina GEMINI_API_KEY (chave grátis no Google AI Studio) ou use --provider regras.")
     client = genai.Client()  # reads GEMINI_API_KEY
-    model = model or os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
-    config = types.GenerateContentConfig(system_instruction=PROMPT, response_mime_type="application/json",
-                                         response_schema=Triage, temperature=0)
+    model = model or os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+    config = types.GenerateContentConfig(
+        system_instruction=PROMPT, response_mime_type="application/json", response_schema=Triage, temperature=0,
+        thinking_config=types.ThinkingConfig(thinking_level="low"),  # a label needs no long reasoning; default thinking timed out
+        http_options=types.HttpOptions(timeout=90_000))
 
     def classify(text: str) -> Triage:
         for attempt in range(4):
             try:
                 return client.models.generate_content(model=model, contents=text, config=config).parsed
-            except errors.ClientError as e:
-                if e.code != 429 or attempt == 3:  # only the free-tier rate limit is worth waiting for
+            except errors.APIError as e:
+                if e.code not in (429, 503) or attempt == 3:  # free-tier rate limit or "high demand": worth waiting
                     raise
                 time.sleep(30 * (attempt + 1))
 

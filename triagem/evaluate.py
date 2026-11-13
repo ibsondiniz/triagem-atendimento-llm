@@ -17,15 +17,19 @@ def load(path=DATASET):
 
 def predict_all(classify, rows, pause=0.0):
     """One prediction per row; a failed call becomes None instead of stopping the run."""
-    preds = []
+    preds, streak = [], 0
     for i, r in enumerate(rows):
         if i and pause:
             time.sleep(pause)  # ponytail: fixed pause for free-tier rate limits; a token bucket if this ever runs in parallel
         try:
             preds.append(classify(r["text"]))
-        except Exception as e:  # noqa: BLE001 - report the failure and keep scoring the rest
-            print(f"  erro na mensagem {r['id']}: {e}")
+            streak = 0
+        except Exception as e:
+            print(f"  erro na mensagem {r['id']}: {str(e)[:200]}")
             preds.append(None)
+            streak += 1
+            if streak == 3:  # likely a daily quota or an outage: stop instead of burning hours on retries
+                raise SystemExit("3 falhas seguidas: avaliação interrompida.") from e
     return preds
 
 

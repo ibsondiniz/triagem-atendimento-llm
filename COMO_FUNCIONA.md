@@ -81,4 +81,4 @@ Tudo isso numa parte das mensagens; outra parte fica guardada só para a medida 
 O custo do erro não é simétrico: perder uma urgência alta é pior que um alarme falso. Dá para olhar a revocação de "alta" separada e ajustar o prompt para priorizá-la.
 
 **Qual foi o papel da IA no projeto?**
-Eu defini o problema: um classificador de atendimento de delivery que pudesse ser medido. O Claude Code escreveu o código, os testes, as mensagens e uma primeira versão dos rótulos. Revisei os rótulos antes de rodar a avaliação com o Gemini.
+Eu defini o problema: um classificador de atendimento de delivery que pudesse ser medido. O Claude Code escreveu o código, os testes, as mensagens e os rótulos, seguindo as regras do prompt.
