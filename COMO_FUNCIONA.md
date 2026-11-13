@@ -52,6 +52,8 @@ Uma chamada que falha (rede, cota, JSON inválido) vira "falhou" e conta como er
 - **Linha de base sem IA.** Responde "a IA vale o custo?". Se as regras acertassem quase tanto quanto o LLM, não valeria. Ela também permite rodar testes e CI sem internet.
 - **Testes nunca chamam LLM.** Chamadas reais são lentas, gastam cota e variam. Os testes usam as regras e um Ollama falso: `monkeypatch` troca o `urlopen` e confere o JSON enviado.
 - **Pausa e nova tentativa no Gemini grátis.** O plano grátis limita chamadas por minuto. O avaliador espera 4 s entre mensagens e, se receber erro 429, espera e tenta de novo.
+- **Lotes no plano grátis.** O limite é de chamadas por dia, não de mensagens. Com `--lote 10`, cada chamada leva 10 mensagens numeradas, e o esquema de saída (`Batch`) pede um item por número. Se o modelo pular um número, aquela mensagem conta como falha.
+- **Resultado que varia.** Duas rodadas idênticas deram 97% e 100% na categoria. Temperatura 0 reduz a variação, mas não zera. Por isso o README mostra a faixa.
 - **Chave fora do código.** A chave fica no `.env`, que está no `.gitignore`, e é carregada com `uv run --env-file .env`.
 - **Dados inventados.** Nenhuma mensagem é de cliente real.
 
