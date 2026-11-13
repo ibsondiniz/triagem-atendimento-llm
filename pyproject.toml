@@ -1,0 +1,37 @@
+[project]
+name = "triagem-atendimento-llm"
+version = "0.1.0"
+description = "Classify delivery customer messages with an LLM (Gemini or Ollama) and measure accuracy on a labeled set."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Ibson Diniz", email = "45883903+ibsondiniz@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=3.3.0",
+    "pydantic>=2.14.3",
+]
+
+[project.scripts]
+triagem = "triagem.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "triagem"
+module-root = ""
+
+[tool.ruff]
+line-length = 140
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]

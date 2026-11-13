@@ -1,0 +1,100 @@
+{"id": 1, "text": "Meu pedido #483920 era pra chegar às 19h e já são 20h30. Cadê?", "category": "atraso", "order_id": "483920", "urgency": "alta"}
+{"id": 2, "text": "boa noite, pedido 551203 ta atrasado uns 20 min, alguma previsão?", "category": "atraso", "order_id": "551203", "urgency": "media"}
+{"id": 3, "text": "o app diz que o entregador está a caminho há 50 minutos e nada", "category": "atraso", "order_id": null, "urgency": "media"}
+{"id": 4, "text": "Já faz 1h40 que pedi e nada da comida. Meu filho tá com fome, isso é um absurdo!!", "category": "atraso", "order_id": null, "urgency": "alta"}
+{"id": 5, "text": "Pedido #702144 não chegou ainda. O status ficou parado em 'saiu para entrega'.", "category": "atraso", "order_id": "702144", "urgency": "media"}
+{"id": 6, "text": "Oi, só queria saber se o pedido 390218 vai demorar muito, pedi há 35 min", "category": "atraso", "order_id": "390218", "urgency": "media"}
+{"id": 7, "text": "O entregador marcou como entregue mas eu não recebi nada! Pedido 615530", "category": "atraso", "order_id": "615530", "urgency": "alta"}
+{"id": 8, "text": "Previsão era 12h15, agora é 13h40 e o app só aumenta o tempo", "category": "atraso", "order_id": null, "urgency": "alta"}
+{"id": 9, "text": "Pedido 228461 atrasado. Tenho reunião às 14h, preciso almoçar antes", "category": "atraso", "order_id": "228461", "urgency": "media"}
+{"id": 10, "text": "Cadê meu lanche? Pedi às 21h e são 21h50", "category": "atraso", "order_id": null, "urgency": "media"}
+{"id": 11, "text": "pedido atrasado de novo. terceira vez essa semana, vou reclamar no Reclame Aqui", "category": "atraso", "order_id": null, "urgency": "alta"}
+{"id": 12, "text": "Meu pedido nº 834012 está com 2 horas de atraso, ninguém responde", "category": "atraso", "order_id": "834012", "urgency": "alta"}
+{"id": 13, "text": "o restaurante ainda nem aceitou meu pedido e já se passaram 40 minutos", "category": "atraso", "order_id": null, "urgency": "media"}
+{"id": 14, "text": "Entregador parece perdido, está rodando o bairro há meia hora. Pedido 109877", "category": "atraso", "order_id": "109877", "urgency": "media"}
+{"id": 15, "text": "Hoje a entrega tá mais lenta que o normal? Meu pedido tá demorando", "category": "atraso", "order_id": null, "urgency": "media"}
+{"id": 16, "text": "Pedi pizza de calabresa e veio de frango. Pedido #440192", "category": "pedido_errado", "order_id": "440192", "urgency": "media"}
+{"id": 17, "text": "Veio o pedido de outra pessoa, o nome na sacola é Carla e eu sou Roberto", "category": "pedido_errado", "order_id": null, "urgency": "media"}
+{"id": 18, "text": "o hambúrguer veio com cebola sendo que pedi SEM cebola, sou alérgico", "category": "pedido_errado", "order_id": null, "urgency": "alta"}
+{"id": 19, "text": "Pedido 667301: pedi coca zero e mandaram coca normal. Sou diabético.", "category": "pedido_errado", "order_id": "667301", "urgency": "alta"}
+{"id": 20, "text": "O açaí veio de 300ml e eu paguei pelo de 500ml", "category": "pedido_errado", "order_id": null, "urgency": "media"}
+{"id": 21, "text": "trocaram meu pedido, veio sushi e eu pedi comida árabe kkk", "category": "pedido_errado", "order_id": null, "urgency": "media"}
+{"id": 22, "text": "Recebi um combo diferente do que escolhi. Pedido 512870.", "category": "pedido_errado", "order_id": "512870", "urgency": "media"}
+{"id": 23, "text": "pedi sem glúten e veio pão comum, minha filha é celíaca e quase comeu", "category": "pedido_errado", "order_id": null, "urgency": "alta"}
+{"id": 24, "text": "Veio tamanho P, pedi G. #301556", "category": "pedido_errado", "order_id": "301556", "urgency": "media"}
+{"id": 25, "text": "A pizza veio meio a meio errada, metade era pra ser portuguesa", "category": "pedido_errado", "order_id": null, "urgency": "media"}
+{"id": 26, "text": "Meu pedido 774102 chegou mas é de outro restaurante, não reconheço nada", "category": "pedido_errado", "order_id": "774102", "urgency": "media"}
+{"id": 27, "text": "pedi o prato vegano e veio com bacon. não como carne.", "category": "pedido_errado", "order_id": null, "urgency": "media"}
+{"id": 28, "text": "Faltou o refrigerante do combo. Pedido #593021", "category": "item_faltando", "order_id": "593021", "urgency": "media"}
+{"id": 29, "text": "Veio só 1 dos 2 hambúrgueres que paguei", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 30, "text": "não veio a sobremesa, pedido 210945", "category": "item_faltando", "order_id": "210945", "urgency": "media"}
+{"id": 31, "text": "Cadê as batatas? Na nota tem batata grande mas não veio", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 32, "text": "Faltaram os talheres e os sachês, mas tudo bem, só avisando", "category": "item_faltando", "order_id": null, "urgency": "baixa"}
+{"id": 33, "text": "Pedido 845670 veio sem o molho que paguei à parte", "category": "item_faltando", "order_id": "845670", "urgency": "media"}
+{"id": 34, "text": "Meu pedido de mercado veio faltando o leite e os ovos", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 35, "text": "Pedi 3 esfihas de carne e vieram só 2", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 36, "text": "faltou um item inteiro do pedido 128834, o yakisoba. paguei 45 reais por ele", "category": "item_faltando", "order_id": "128834", "urgency": "media"}
+{"id": 37, "text": "Chegou sem a bebida e sem o troco de 50 reais que pedi", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 38, "text": "A caixa veio com 10 nuggets e o anúncio fala em 20", "category": "item_faltando", "order_id": null, "urgency": "media"}
+{"id": 39, "text": "A comida chegou fria e a embalagem toda aberta. Pedido #392018", "category": "qualidade", "order_id": "392018", "urgency": "media"}
+{"id": 40, "text": "Encontrei um cabelo no meu prato. Nojento.", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 41, "text": "O frango estava cru por dentro, minha esposa passou mal depois de comer", "category": "qualidade", "order_id": null, "urgency": "alta"}
+{"id": 42, "text": "A pizza chegou toda amassada, o recheio grudado na tampa", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 43, "text": "O lacre da sacola estava rompido, não tenho coragem de comer", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 44, "text": "sorvete chegou derretido, virou suco. pedido 657712", "category": "qualidade", "order_id": "657712", "urgency": "media"}
+{"id": 45, "text": "O pão estava duro e o queijo com cheiro estranho", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 46, "text": "Comi o peixe e estou com dor de barriga desde ontem, pedido 903455", "category": "qualidade", "order_id": "903455", "urgency": "alta"}
+{"id": 47, "text": "Batata murcha e oleosa, bem diferente da foto", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 48, "text": "veio um pedaço de plástico dentro do lanche!!! vou levar isso ao Procon", "category": "qualidade", "order_id": null, "urgency": "alta"}
+{"id": 49, "text": "A sopa vazou na sacola inteira", "category": "qualidade", "order_id": null, "urgency": "media"}
+{"id": 50, "text": "O bolo veio com mofo. Pedido #118204. Felizmente vi antes de comer.", "category": "qualidade", "order_id": "118204", "urgency": "media"}
+{"id": 51, "text": "Fiz o cancelamento ontem e até agora o estorno não caiu no cartão. Pedido 482201", "category": "reembolso", "order_id": "482201", "urgency": "media"}
+{"id": 52, "text": "quero meu dinheiro de volta do pedido #719330, já expliquei o problema no chat anterior", "category": "reembolso", "order_id": "719330", "urgency": "media"}
+{"id": 53, "text": "Quanto tempo leva pro reembolso aparecer na fatura?", "category": "reembolso", "order_id": null, "urgency": "baixa"}
+{"id": 54, "text": "O reembolso veio de 20 reais mas eu paguei 58. Pedido 305991", "category": "reembolso", "order_id": "305991", "urgency": "media"}
+{"id": 55, "text": "Me prometeram reembolso há 10 dias e nada. Vou abrir reclamação no Procon.", "category": "reembolso", "order_id": null, "urgency": "alta"}
+{"id": 56, "text": "Posso receber o reembolso em crédito no app em vez de no cartão?", "category": "reembolso", "order_id": null, "urgency": "baixa"}
+{"id": 57, "text": "o estorno do pedido 640078 apareceu como pendente, é normal?", "category": "reembolso", "order_id": "640078", "urgency": "baixa"}
+{"id": 58, "text": "Preciso do reembolso via pix, o cartão foi cancelado", "category": "reembolso", "order_id": null, "urgency": "media"}
+{"id": 59, "text": "Ainda não recebi o valor de volta do pedido que cancelaram por falta de entregador", "category": "reembolso", "order_id": null, "urgency": "media"}
+{"id": 60, "text": "reembolso negado?? o pedido nem chegou! 811462", "category": "reembolso", "order_id": "811462", "urgency": "media"}
+{"id": 61, "text": "Quero cancelar meu pedido 284730, pedi no endereço errado", "category": "cancelamento", "order_id": "284730", "urgency": "media"}
+{"id": 62, "text": "Como cancelo? Pedi duas vezes sem querer", "category": "cancelamento", "order_id": null, "urgency": "media"}
+{"id": 63, "text": "Cancela por favor, já se passou muito tempo e eu vou sair", "category": "cancelamento", "order_id": null, "urgency": "media"}
+{"id": 64, "text": "consigo cancelar o pedido #902117 antes do restaurante aceitar?", "category": "cancelamento", "order_id": "902117", "urgency": "media"}
+{"id": 65, "text": "Desisti do pedido, pode cancelar. Pedido 377512", "category": "cancelamento", "order_id": "377512", "urgency": "media"}
+{"id": 66, "text": "Quero cancelar minha assinatura do clube de vantagens", "category": "cancelamento", "order_id": null, "urgency": "media"}
+{"id": 67, "text": "O restaurante cancelou meu pedido sem explicar nada. Por quê?", "category": "cancelamento", "order_id": null, "urgency": "media"}
+{"id": 68, "text": "Pedi errado o sabor, dá pra cancelar e fazer outro?", "category": "cancelamento", "order_id": null, "urgency": "media"}
+{"id": 69, "text": "Preciso cancelar urgente, o pedido é pra festa que foi adiada. #560219", "category": "cancelamento", "order_id": "560219", "urgency": "media"}
+{"id": 70, "text": "cancelem o pedido 431088 imediatamente, o endereço é de uma casa que vendi", "category": "cancelamento", "order_id": "431088", "urgency": "media"}
+{"id": 71, "text": "Fui cobrado duas vezes pelo mesmo pedido #249016!", "category": "pagamento", "order_id": "249016", "urgency": "alta"}
+{"id": 72, "text": "Meu cartão foi recusado mas o valor aparece na fatura", "category": "pagamento", "order_id": null, "urgency": "alta"}
+{"id": 73, "text": "O cupom de desconto não foi aplicado no pedido 873301", "category": "pagamento", "order_id": "873301", "urgency": "media"}
+{"id": 74, "text": "Paguei no pix e o pedido continua como aguardando pagamento", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 75, "text": "A taxa de entrega cobrada foi maior que a mostrada no app", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 76, "text": "Não consigo adicionar meu cartão novo, dá erro", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 77, "text": "Cobraram a gorjeta mesmo eu tendo desmarcado. Pedido 156672", "category": "pagamento", "order_id": "156672", "urgency": "media"}
+{"id": 78, "text": "apareceu uma cobrança do app que eu não reconheço, não fiz pedido nesse dia", "category": "pagamento", "order_id": null, "urgency": "alta"}
+{"id": 79, "text": "O vale-refeição não está sendo aceito como forma de pagamento", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 80, "text": "Por que o valor do pedido mudou depois que finalizei?", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 81, "text": "Paguei R$ 89,90 mas o restaurante diz que ficou faltando pagar R$ 10", "category": "pagamento", "order_id": null, "urgency": "media"}
+{"id": 82, "text": "Pix pago duas vezes no pedido 664590, preciso de ajuda", "category": "pagamento", "order_id": "664590", "urgency": "alta"}
+{"id": 83, "text": "Entregador super educado e rápido, parabéns!", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 84, "text": "A melhor pizza que já comi pelo app. Pedido 330987, voltarei!", "category": "elogio", "order_id": "330987", "urgency": "baixa"}
+{"id": 85, "text": "Queria agradecer o atendimento de ontem, resolveram meu problema rapidinho", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 86, "text": "Comida chegou quentinha e bem embalada, nota 10", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 87, "text": "Adorei o novo restaurante japonês que entrou no app", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 88, "text": "o motoboy me ligou pra confirmar o portão, muito atencioso", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 89, "text": "Obrigado pelo cupom de aniversário, fiquei feliz!", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 90, "text": "Entrega antes do previsto, muito bom", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 91, "text": "A atendente Júlia foi excelente, merece um aumento", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 92, "text": "tudo perfeito no pedido de hoje, até bilhete escrito à mão veio 😊", "category": "elogio", "order_id": null, "urgency": "baixa"}
+{"id": 93, "text": "Até que horas o restaurante Sabor da Vila funciona no domingo?", "category": "outro", "order_id": null, "urgency": "baixa"}
+{"id": 94, "text": "Como faço para mudar meu número de telefone na conta?", "category": "outro", "order_id": null, "urgency": "baixa"}
+{"id": 95, "text": "Vocês entregam no bairro Alto de São Manoel?", "category": "outro", "order_id": null, "urgency": "baixa"}
+{"id": 96, "text": "Quero cadastrar meu restaurante no app, com quem falo?", "category": "outro", "order_id": null, "urgency": "baixa"}
+{"id": 97, "text": "Esqueci minha senha e o e-mail de recuperação não chega", "category": "outro", "order_id": null, "urgency": "media"}
+{"id": 98, "text": "Dá pra agendar um pedido pra amanhã às 12h?", "category": "outro", "order_id": null, "urgency": "baixa"}
+{"id": 99, "text": "Minha conta foi bloqueada sem motivo", "category": "outro", "order_id": null, "urgency": "media"}
+{"id": 100, "text": "Sugestão: coloquem filtro de comida sem lactose", "category": "outro", "order_id": null, "urgency": "baixa"}
