@@ -9,7 +9,7 @@ Cada mensagem de cliente de um app de delivery vira três campos:
 - **número do pedido**: só os dígitos, ou vazio se a mensagem não traz;
 - **urgência**: alta, média ou baixa, com regras escritas no prompt.
 
-O foco é **medir** e não só chamar a IA. O projeto traz 100 mensagens inventadas e rotuladas à mão e um avaliador. O avaliador mostra o acerto, a precisão e a revocação por categoria, as confusões mais comuns e cada erro.
+O foco é **medir** e não só chamar a IA. O projeto traz 100 mensagens inventadas, cada uma com a resposta esperada, e um avaliador. O avaliador mostra o acerto, a precisão e a revocação por categoria, as confusões mais comuns e cada erro.
 
 ```
 $ triagem classificar "Fui cobrado duas vezes pelo pedido #249016!"
@@ -75,6 +75,6 @@ Nenhum teste chama um LLM de verdade. O CI roda com a linha de base e com um ser
 
 ## Autoria
 
-Feito por Ibson Diniz com auxílio do Claude Code, a IA de programação da Anthropic. Eu defini as categorias, as regras de urgência e os rótulos, e revisei e testei o código.
+Feito por Ibson Diniz com auxílio do Claude Code, a IA de programação da Anthropic. As mensagens e os rótulos são inventados para o projeto e estão em [data/mensagens.jsonl](data/mensagens.jsonl).
 
 Licença [MIT](LICENSE).
