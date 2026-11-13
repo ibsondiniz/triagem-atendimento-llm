@@ -21,6 +21,7 @@ def main(argv=None):
     a = sub.add_parser("avaliar", help="mede o acerto nas mensagens rotuladas de data/mensagens.jsonl")
     a.add_argument("--pausa", type=float, default=None, help="segundos entre chamadas (padrão: 4 no gemini, 0 nos outros)")
     a.add_argument("--saida", help="grava o relatório em Markdown neste arquivo")
+    a.add_argument("--lote", type=int, default=1, help="mensagens por chamada no Gemini (o plano grátis limita chamadas por dia)")
     for s in (c, a):
         s.add_argument("--provider", default="gemini", choices=["gemini", "ollama", "regras"])
         s.add_argument("--modelo", help="nome do modelo (padrão: GEMINI_MODEL ou OLLAMA_MODEL)")
@@ -34,7 +35,9 @@ def main(argv=None):
     rows = load()
     pause = args.pausa if args.pausa is not None else (4.0 if args.provider == "gemini" else 0.0)
     start = time.time()
-    s = score(rows, predict_all(classify, rows, pause))
+    s = score(rows, predict_all(classify, rows, pause, args.lote))
+    if args.lote > 1 and hasattr(classify, "many"):
+        classify.label += f", lotes de {args.lote} mensagens"
     print(f"{classify.label}: categoria {pct(s['category_accuracy'])}, urgência {pct(s['urgency_accuracy'])}, "
           f"pedido {pct(s['order_id_accuracy'])}, falhas {s['failed']}")
     if args.saida:

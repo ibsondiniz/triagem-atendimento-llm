@@ -50,3 +50,24 @@
 | 36 | faltou um item inteiro do pedido 128834, o yakisoba. paguei 45 reais por ele | item_faltando | pagamento |
 | 38 | A caixa veio com 10 nuggets e o anúncio fala em 20 | item_faltando | outro |
 | 80 | Por que o valor do pedido mudou depois que finalizei? | pagamento | outro |
+
+## Erros de urgência
+
+| # | Mensagem | Esperado | Previsto |
+|---|---|---|---|
+| 1 | Meu pedido #483920 era pra chegar às 19h e já são 20h30. Cadê? | alta | media |
+| 8 | Previsão era 12h15, agora é 13h40 e o app só aumenta o tempo | alta | media |
+| 13 | o restaurante ainda nem aceitou meu pedido e já se passaram 40 minutos | media | baixa |
+| 14 | Entregador parece perdido, está rodando o bairro há meia hora. Pedido 109877 | media | baixa |
+| 16 | Pedi pizza de calabresa e veio de frango. Pedido #440192 | media | baixa |
+| 26 | Meu pedido 774102 chegou mas é de outro restaurante, não reconheço nada | media | alta |
+| 27 | pedi o prato vegano e veio com bacon. não como carne. | media | baixa |
+| 38 | A caixa veio com 10 nuggets e o anúncio fala em 20 | media | baixa |
+| 53 | Quanto tempo leva pro reembolso aparecer na fatura? | baixa | media |
+| 56 | Posso receber o reembolso em crédito no app em vez de no cartão? | baixa | media |
+| 57 | o estorno do pedido 640078 apareceu como pendente, é normal? | baixa | media |
+| 62 | Como cancelo? Pedi duas vezes sem querer | media | alta |
+| 72 | Meu cartão foi recusado mas o valor aparece na fatura | alta | media |
+| 80 | Por que o valor do pedido mudou depois que finalizei? | media | baixa |
+| 97 | Esqueci minha senha e o e-mail de recuperação não chega | media | baixa |
+| 99 | Minha conta foi bloqueada sem motivo | media | baixa |

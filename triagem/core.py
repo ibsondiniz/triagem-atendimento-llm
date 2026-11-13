@@ -50,6 +50,17 @@ urgency:
 - media: todo o resto"""
 
 
+class NumberedTriage(Triage):
+    id: int
+
+
+class Batch(BaseModel):
+    items: list[NumberedTriage]
+
+
+BATCH_RULE = "\n\nVocê recebe várias mensagens numeradas, uma por linha. Devolva um item para cada mensagem, com o mesmo id."
+
+
 # --- regras: keyword baseline -------------------------------------------------------------
 
 RULES = [  # first match wins, so the order matters
@@ -84,21 +95,35 @@ def gemini_classifier(model: str | None = None):
         raise SystemExit("Defina GEMINI_API_KEY (chave grátis no Google AI Studio) ou use --provider regras.")
     client = genai.Client()  # reads GEMINI_API_KEY
     model = model or os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
-    config = types.GenerateContentConfig(
-        system_instruction=PROMPT, response_mime_type="application/json", response_schema=Triage, temperature=0,
-        thinking_config=types.ThinkingConfig(thinking_level="low"),  # a label needs no long reasoning; default thinking timed out
-        http_options=types.HttpOptions(timeout=90_000))
 
-    def classify(text: str) -> Triage:
+    def config(schema, prompt=PROMPT):
+        return types.GenerateContentConfig(
+            system_instruction=prompt, response_mime_type="application/json", response_schema=schema, temperature=0,
+            thinking_config=types.ThinkingConfig(thinking_level="low"),  # a label needs no long reasoning; default thinking timed out
+            http_options=types.HttpOptions(timeout=90_000))
+
+    one, many = config(Triage), config(Batch, PROMPT + BATCH_RULE)
+
+    def call(contents, cfg):
         for attempt in range(4):
             try:
-                return client.models.generate_content(model=model, contents=text, config=config).parsed
+                return client.models.generate_content(model=model, contents=contents, config=cfg).parsed
             except errors.APIError as e:
                 if e.code not in (429, 503) or attempt == 3:  # free-tier rate limit or "high demand": worth waiting
                     raise
                 time.sleep(30 * (attempt + 1))
 
+    def classify(text: str) -> Triage:
+        return call(text, one)
+
+    def classify_many(texts: list[str]) -> list[Triage | None]:
+        """Several messages in one request: the free tier counts requests per day, not messages."""
+        got = call("\n".join(f"{i}: {t}" for i, t in enumerate(texts, 1)), many)
+        by_id = {it.id: Triage(**it.model_dump(exclude={"id"})) for it in got.items}
+        return [by_id.get(i) for i in range(1, len(texts) + 1)]  # a skipped message counts as a failure
+
     classify.label = f"gemini ({model})"
+    classify.many = classify_many
     return classify
 
 

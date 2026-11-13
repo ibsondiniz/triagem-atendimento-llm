@@ -8,7 +8,7 @@ import pytest
 from triagem import core
 from triagem.cli import main
 from triagem.core import Triage, classify_rules, get_classifier
-from triagem.evaluate import load, report, score
+from triagem.evaluate import load, predict_all, report, score
 
 
 def test_dataset_is_complete_and_valid():
@@ -47,6 +47,25 @@ def test_score_counts_hits_and_failures():
     assert [m[0] for m in s["mistakes"]] == [2, 3]
     md = report("teste", s, 1.0)
     assert "| Categoria | 33% |" in md and "| elogio | outro | 1 |" in md
+
+
+def test_batches_use_many_and_failures_cover_the_whole_batch():
+    calls = []
+
+    def classify(text):
+        raise AssertionError("single call should not happen when batching")
+
+    def many(texts):
+        calls.append(len(texts))
+        if len(calls) == 2:
+            raise RuntimeError("quota")
+        return [classify_rules(t) for t in texts[:-1]] + [None]  # the model skipped the last message
+
+    classify.many = many
+    rows = [{"id": i, "text": f"Faltou o refrigerante, pedido {100000 + i}"} for i in range(5)]
+    preds = predict_all(classify, rows, batch=2)
+    assert calls == [2, 2, 1]
+    assert [p is None for p in preds] == [False, True, True, True, True]
 
 
 def test_ollama_sends_schema_and_parses_answer(monkeypatch):

@@ -15,18 +15,22 @@ def load(path=DATASET):
     return [json.loads(line) for line in Path(path).read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-def predict_all(classify, rows, pause=0.0):
-    """One prediction per row; a failed call becomes None instead of stopping the run."""
+def predict_all(classify, rows, pause=0.0, batch=1):
+    """One prediction per row; a failed call becomes None instead of stopping the run.
+    With batch > 1 and a classifier that has .many, each request carries `batch` messages."""
+    many = getattr(classify, "many", None) if batch > 1 else None
+    step = batch if many else 1
     preds, streak = [], 0
-    for i, r in enumerate(rows):
-        if i and pause:
+    for start in range(0, len(rows), step):
+        group = rows[start:start + step]
+        if start and pause:
             time.sleep(pause)  # ponytail: fixed pause for free-tier rate limits; a token bucket if this ever runs in parallel
         try:
-            preds.append(classify(r["text"]))
+            preds += many([r["text"] for r in group]) if many else [classify(group[0]["text"])]
             streak = 0
         except Exception as e:
-            print(f"  erro na mensagem {r['id']}: {str(e)[:200]}")
-            preds.append(None)
+            print(f"  erro nas mensagens {group[0]['id']}-{group[-1]['id']}: {str(e)[:200]}")
+            preds += [None] * len(group)
             streak += 1
             if streak == 3:  # likely a daily quota or an outage: stop instead of burning hours on retries
                 raise SystemExit("3 falhas seguidas: avaliação interrompida.") from e
@@ -55,6 +59,8 @@ def score(rows, preds):
         "per_category": per_cat,
         "confusion": Counter(cat),
         "mistakes": [(r["id"], r["text"], r["category"], g) for (r, _), (_, g) in zip(pairs, cat) if r["category"] != g],
+        "urgency_mistakes": [(r["id"], r["text"], r["urgency"], p.urgency if p else "falhou") for r, p in pairs
+                             if not p or p.urgency != r["urgency"]],
     }
 
 
@@ -91,6 +97,12 @@ def report(label, s, seconds):
         "| # | Mensagem | Esperado | Previsto |",
         "|---|---|---|---|",
         *[f"| {i} | {t.replace('|', '/')} | {e} | {g} |" for i, t, e, g in s["mistakes"]],
+        "",
+        "## Erros de urgência",
+        "",
+        "| # | Mensagem | Esperado | Previsto |",
+        "|---|---|---|---|",
+        *[f"| {i} | {t.replace('|', '/')} | {e} | {g} |" for i, t, e, g in s["urgency_mistakes"]],
         "",
     ]
     return "\n".join(lines)
